@@ -53,11 +53,34 @@ function myFunc() {
 }
 
 function getRandomNum(max) {
-  let rand = -1;
-  do {
-  rand = Math.floor(Math.random()*10*((max).toString().length));
-  console.log(max.toString().length);
+  return (Math.random()*max).toFixed(0);
+}
+
+function myAdder(a, b) {
+  a=Number(a);
+  b=Number(b);
+  return a+b;
+}
+
+function distance(x1, y1, x2, y2) {
+  return Math.sqrt(Math.pow((x2-x1),2) + Math.pow((y2-y1),2));
+}
+
+function quadratic(a, b, c) {
+  let roots = [];
+  let disc = b**2-4*a*c;
+  let i = false;
+  if (disc > 0) {
+    roots.push((-b+Math.sqrt(disc))/2*a);
+    roots.push((-b-Math.sqrt(disc))/2*a);
   }
-  while (rand > max);
-  return rand;
+  else if (disc < 0) {
+    disc = disc*-1;
+    roots.push((-b+Math.sqrt(disc))/2*a + "i");
+    roots.push((-b-Math.sqrt(disc))/2*a + "i");
+  }
+  else if (disc == 0) {
+    roots.push(-b/2*a);
+  }
+  return roots;
 }

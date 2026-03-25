@@ -47,3 +47,17 @@ function onQuadraticClick() {
   const roots = quadratic(a, b, c);
   setText('outQuadratic', Array.isArray(roots) ? roots.join(', ') : roots);
 }
+let count = 0;
+function myFunc() {
+  return ++count;
+}
+
+function getRandomNum(max) {
+  let rand = -1;
+  do {
+  rand = Math.floor(Math.random()*10*((max).toString().length));
+  console.log(max.toString().length);
+  }
+  while (rand > max);
+  return rand;
+}

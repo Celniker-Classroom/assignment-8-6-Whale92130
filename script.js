@@ -53,7 +53,13 @@ function myFunc() {
 }
 
 function getRandomNum(max) {
-  return (Math.random()*max).toFixed(0);
+  let rand=-1;
+  if (isNaN == false && max >=0) {
+  rand = (Math.random()*max).toFixed(0);
+  }else {
+    rand = 0;
+  }
+  return rand;
 }
 
 function myAdder(a, b) {
